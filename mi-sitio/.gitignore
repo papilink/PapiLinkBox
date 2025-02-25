@@ -1,0 +1,16 @@
+# Excluir instaladores y paquetes
+*.deb
+*.gpg
+*.bash
+
+# Excluir archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Excluir archivos de entorno (si los tienes)
+.env
+.env.local
+
+# Excluir configuraciones de IDE/Editores
+.vscode/
+.idea/
