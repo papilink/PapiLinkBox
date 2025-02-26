@@ -1,6 +1,7 @@
-import numpy as np
+
 import tkinter as tk
 from tkinter import ttk
+import numpy as np
 import pyaudio
 from scipy.fft import rfft, rfftfreq, irfft
 import matplotlib.pyplot as plt
@@ -52,13 +53,13 @@ class Equalizer24Band:
         control_canvas.create_window((0,0), window=scroll_frame, anchor="nw")
         
         scroll_frame.bind("<Configure>", lambda e: control_canvas.configure(
-            scrollregion=control_canvas.bbox("all"))
+            scrollregion=control_canvas.bbox("all")))
         
-        # Crear sliders para cada banda
+        scroll_frame.bind("<Configure>", lambda e: control_canvas.configure(
+            scrollregion=control_canvas.bbox("all")))
         for idx, freq in enumerate(self.bands):
-            frame = ttk.Frame(scroll_frame)
+            frame = ttk.Frame(scroll_frame) 
             frame.grid(row=idx//4, column=idx%4, padx=5, pady=5)
-            
             ttk.Label(frame, text=f"{freq} Hz").pack()
             ttk.Scale(
                 frame,
